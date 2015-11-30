@@ -1,3 +1,5 @@
+package com.stringprocessor;
+
 public abstract class AbstractStringProcessor implements IStringProcessor {
     private IStringProcessor mNext;
     
@@ -13,5 +15,5 @@ public abstract class AbstractStringProcessor implements IStringProcessor {
         return mNext;
     }
     
-    abstract public StringHolder process(StringHolder holder);
+    abstract public ByteBuffer process(ByteBuffer buffer);
 }

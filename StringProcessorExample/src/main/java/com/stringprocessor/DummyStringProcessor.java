@@ -1,10 +1,12 @@
+package com.stringprocessor;
+
 public class DummyStringProcessor extends AbstractStringProcessor {
     public DummyStringProcessor() {
         super(null);
     }
     
-    public StringHolder process(StringHolder holder) {
+    public ByteBuffer process(ByteBuffer buffer) {
         System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
-        return holder;
+        return buffer;
     }
 }

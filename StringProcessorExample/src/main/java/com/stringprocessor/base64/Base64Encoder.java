@@ -1,4 +1,8 @@
-//import org.apache.commons.codec.binary.Base64;
+package com.stringprocessor.base64;//import org.apache.commons.codec.binary.Base64;
+import com.stringprocessor.AbstractStringProcessor;
+import com.stringprocessor.ByteBuffer;
+import com.stringprocessor.IStringProcessor;
+
 import javax.xml.bind.DatatypeConverter;
 
 public class Base64Encoder extends AbstractStringProcessor implements IStringProcessor {
@@ -11,15 +15,15 @@ public class Base64Encoder extends AbstractStringProcessor implements IStringPro
         super(next);
     }
     
-    public StringHolder process(StringHolder holder) {
+    public ByteBuffer process(ByteBuffer buffer) {
         System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
-        holder.setString(DatatypeConverter.printBase64Binary(holder.getBytes()));
+        buffer.setString(DatatypeConverter.printBase64Binary(buffer.getBytes()));
         
         if (next() != null) {
-            holder = next().process(holder);
+            buffer = next().process(buffer);
         }
         
-        return holder;
+        return buffer;
     }
     
 }
