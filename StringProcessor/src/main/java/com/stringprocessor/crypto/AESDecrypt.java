@@ -11,8 +11,6 @@ public class AESDecrypt extends AbstractAES {
     }
     
     public ByteBuffer process(ByteBuffer buffer) {
-        System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
-        
         return doProcess(buffer, Cipher.DECRYPT_MODE);
     }
     

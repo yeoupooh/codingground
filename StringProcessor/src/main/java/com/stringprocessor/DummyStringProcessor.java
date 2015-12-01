@@ -6,7 +6,6 @@ public class DummyStringProcessor extends AbstractStringProcessor {
     }
     
     public ByteBuffer process(ByteBuffer buffer) {
-        System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
         return buffer;
     }
 }

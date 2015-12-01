@@ -18,8 +18,6 @@ public class XorStringProcessor extends AbstractStringProcessor {
 
     @Override
     public ByteBuffer process(ByteBuffer buffer) {
-        System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
-
         byte[] bytes = buffer.getBytes();
         for (int i = 0; i < bytes.length; i++) {
             bytes[i] = (byte)(bytes[i] ^ mKey);

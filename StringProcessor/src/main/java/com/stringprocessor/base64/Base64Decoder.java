@@ -16,7 +16,6 @@ public class Base64Decoder extends AbstractStringProcessor {
     }
     
     public ByteBuffer process(ByteBuffer buffer) {
-        System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
         buffer.setBytes(DatatypeConverter.parseBase64Binary(buffer.getString()));
         
         if (next() != null) {

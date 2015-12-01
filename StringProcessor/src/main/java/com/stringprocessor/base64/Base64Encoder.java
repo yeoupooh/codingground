@@ -16,7 +16,6 @@ public class Base64Encoder extends AbstractStringProcessor implements IStringPro
     }
     
     public ByteBuffer process(ByteBuffer buffer) {
-        System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
         buffer.setString(DatatypeConverter.printBase64Binary(buffer.getBytes()));
         
         if (next() != null) {

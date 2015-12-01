@@ -12,7 +12,6 @@ public class AESEncrypt extends AbstractAES implements IStringProcessor {
     }
     
     public ByteBuffer process(ByteBuffer buffer) {
-        System.out.println(String.format("%s: process", this.getClass().getSimpleName()));
         return doProcess(buffer, Cipher.ENCRYPT_MODE);
     }
 }
